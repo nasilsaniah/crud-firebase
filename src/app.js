@@ -8,8 +8,8 @@ firebase.initializeApp({
 var db = firebase.firestore();
 
 //Agregar documentos de manera dinamica
-//las variables nombre y area son las que se reconoce del id en index.html
-//
+//las variables nombre y carrera son las que se reconoce del id en index.html
+//Las variables que se encuentran en db.collection name y career, son los campos de la base de datos de firestore.
 
 //funcion guardar, cuando se hace clic en guardar() se ejecuta el sgt codigo
 function guardar() {
@@ -40,7 +40,7 @@ db.collection("users").onSnapshot((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data().name}`);
         tabla.innerHTML +=
-            `
+        `
         <tr>
         <th scope="row">${doc.id}</th>
             <td>${doc.data().name}</td>
