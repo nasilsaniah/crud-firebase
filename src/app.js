@@ -14,11 +14,11 @@ var db = firebase.firestore();
 //funcion guardar, cuando se hace clic en guardar() se ejecuta el sgt codigo
 function guardar() {
     var nombre = document.getElementById('nombre').value;
-    var career = document.getElementById('carrera').value;
+    var carrera = document.getElementById('carrera').value;
 
     db.collection("users").add({
         name: nombre,
-        career: area,
+        career: carrera,
     })
     .then(function (docRef) {
             console.log("Document written with ID: ", docRef.id);
