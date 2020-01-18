@@ -45,10 +45,19 @@ db.collection("users").onSnapshot((querySnapshot) => {
         <th scope="row">${doc.id}</th>
             <td>${doc.data().name}</td>
             <td>${doc.data().career}</td>
-            <td><button class="btn btn-danger onclick="eliminar('${doc.id}')">Eliminar</button></td>
+            <td><button class="btn btn-danger" onclick="eliminar('${doc.id}')">Eliminar</button></td>
+            <td><button class="btn btn-warning">Editar</button></td>
         </tr>
         `
     });
 });
 
+//borrar documentos
+function eliminar(id){
+    db.collection("users").doc(id).delete().then(function () {
+        console.log("Document successfully deleted!");
+    }).catch(function (error) {
+        console.error("Error removing documnent: ", error);
+    });  
+}
 
