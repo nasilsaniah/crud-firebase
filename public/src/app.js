@@ -45,8 +45,8 @@ db.collection("users").onSnapshot((querySnapshot) => {
         <th scope="row">${doc.id}</th>
             <td>${doc.data().name}</td>
             <td>${doc.data().career}</td>
-            <td><button class="btn btn-danger" onclick="eliminar('${doc.id}')">Eliminar</button></td>
-            <td><button class="btn btn-warning" onclick="editar('${doc.id}','${doc.data().name}','${doc.data().career}')">Editar</button></td>
+            <td><button class="btn btn-danger" onclick="eliminar('${doc.id}')"><i class="fa fa-trash"></i></button></td>
+            <td><button class="btn btn-warning" onclick="editar('${doc.id}','${doc.data().name}','${doc.data().career}')"><i class="fa fa-edit"></i></button></td>
         </tr>
         `
     });
